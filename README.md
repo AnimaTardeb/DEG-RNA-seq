@@ -1,19 +1,33 @@
 # DEG-RNA-seq
- 
+
 The pipeline is constructed in a way to consider data from the TCGA data portal. 
-Once the data downloaded using [gdc-portal](https://gdc.cancer.gov/access-data/gdc-data-transfer-tool), you need to download the sample sheet file that contains information about the samples. the sample sheet file would be used by the function `convertNames.pl` to change the files name, get the  sample's ID (see column `Sample Type`) and the UUID (see column `File ID`).
+
+Once the data are downloaded using [gdc-portal](https://gdc.cancer.gov/access-data/gdc-data-transfer-tool), you need to download the sample sheet file that contains information about the samples. The sample sheet file would be used by the function `convertNames.pl` to change the files name, get the  sample's ID (see column `Sample Type`) and the UUID (see column `File ID`).
+
 It is important to note that all the downloaded files are in separate folders and named according the UUID column. More, in each folded there is a bam file named according the file name column. 
 
 ## Basic Usage
 
+
 ![](http://i.imgur.com/y8g506n.png?1)
+
+<div align="center">
+  <sub>The pipline is build by Meng Wang (2016) at harvard T.H.chan School of public health
+  (<a href="http://lemoslab.org">Lemos Lab</a>) and
+  <a href="https://github.com/AnimaTardeb"> contributor(A. Bedrat).
+  </a>
+</div>
+ 
+![PERL](https://img.shields.io/badge/perl-v5.18.2-blue.svg)
+[![License](https://img.shields.io/badge/license-GNU_v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.fr.html)
+
 
 ## Features
 
 - Written in  perl and shell.
 - No installation necessary.
-- Tu use, you need to change the paths of the run file.
-- Works on Mac and Linux (never tested on Windows)
+- To use, you need to change the paths of the run file.
+- Works on Mac and Linux (never tested on Windows).
 
 ## Needed files
 
@@ -82,52 +96,13 @@ rDNA_subunit	Background_Depth	rDNA_Depth	rDNA_CN	Type
 
 ```
 
-### List all available files
-
-```bash
-$ joe ls    # OR `joe list`
-```
-
-Output:
-
-> actionscript, ada, agda, android, anjuta, appceleratortitanium, archives, archlinuxpackages, autotools, bricxcc, c, c++, cakephp, cfwheels, chefcookbook, clojure, cloud9, cmake, codeigniter, codekit, commonlisp, composer, concrete5, coq, craftcms, cvs, dart, darteditor, delphi, dm, dreamweaver, drupal, eagle, eclipse, eiffelstudio, elisp, elixir, emacs, ensime, episerver, erlang, espresso, expressionengine, extjs, fancy, finale, flexbuilder, forcedotcom, fortran, fuelphp, gcov, gitbook, go, gradle, grails, gwt, haskell, idris, igorpro, ipythonnotebook, java, jboss, jdeveloper, jekyll, jetbrains, joomla, jython, kate, kdevelop4, kohana, labview, laravel, lazarus, leiningen, lemonstand, libreoffice, lilypond, linux, lithium, lua, lyx, magento, matlab, maven, mercurial, mercury, metaprogrammingsystem, meteor, microsoftoffice, modelsim, momentics, monodevelop, nanoc, netbeans, nim, ninja, node, notepadpp, objective-c, ocaml, opa, opencart, oracleforms, osx, packer, perl, phalcon, playframework, plone, prestashop, processing, python, qooxdoo, qt, r, rails, redcar, redis, rhodesrhomobile, ros, ruby, rust, sass, sbt, scala, scons, scrivener, sdcc, seamgen, sketchup, slickedit, stella, sublimetext, sugarcrm, svn, swift, symfony, symphonycms, tags, tex, textmate, textpattern, tortoisegit, turbogears2, typo3, umbraco, unity, vagrant, vim, virtualenv, visualstudio, vvvv, waf, webmethods, windows, wordpress, xcode, xilinxise, xojo, yeoman, yii, zendframework, zephir
-
-### BONUS ROUND: Alternate version control software
-
-Joe isn't **just** a generator for `.gitignore` files. You can use it and its output wherever a SCM is used.
-
-```bash
-$ joe g java > .hgignore
-```
-
 ## Contributing
 
 #### Bug Reports & Feature Requests
 
 Please use the [issue tracker](https://github.com/karan/joe/issues) to report any bugs or file feature requests.
 
-#### Developing
 
-PRs are welcome. To begin developing, do this:
-
-```bash
-$ git clone git@github.com:karan/joe.git
-$ cd joe/
-$ go run *.go
-```
-
-#### `tool.sh`
+#### Contact
 
 This is a handy script that automates a lot of developing steps.
-
-
-```bash
-USAGE:
-    $ $tool [-h|--help] COMMAND
-
-  EXAMPLES:
-    $ $tool deps      Install dependencies for joe
-    $ $tool build     Build a binary
-    $ $tool run       Build and run the binary
-```
-
